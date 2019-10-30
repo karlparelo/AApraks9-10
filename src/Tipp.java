@@ -76,10 +76,16 @@ public class Tipp {
         }
     }
 
-    // TODO: Ülesanne 2
     // Koostada meetod etteantud AVL-puu tippude arvu leidmiseks
     public int tippudeArv() {
-        throw new UnsupportedOperationException();
+        int kokku=0;
+        if(vasakAlluv!=null){
+            kokku+=vasakAlluv.tippudeArv();
+        }
+        if(paremAlluv!=null){
+            kokku+=paremAlluv.tippudeArv();
+        }
+        return kokku+1;
     }
 
     // TODO: Ülesanne 2

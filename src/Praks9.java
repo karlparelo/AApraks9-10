@@ -23,5 +23,7 @@ public class Praks9 {
 
         Tipp puu=Tipp.genereeri(4);
         System.out.println(puu.sulgesitus());
+        System.out.println(puu.tippudeArv());
+        System.out.println(tipp1.tippudeArv());
     }
 }

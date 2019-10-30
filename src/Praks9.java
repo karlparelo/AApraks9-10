@@ -20,5 +20,8 @@ public class Praks9 {
 
         System.out.println("Puu sulgesitus:");
         System.out.println(tipp1.sulgesitus());
+
+        Tipp puu=Tipp.genereeri(4);
+        System.out.println(puu.sulgesitus());
     }
 }

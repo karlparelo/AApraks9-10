@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Tipp {
     private int väärtus;
     private Tipp vasakAlluv;
@@ -59,10 +61,19 @@ public class Tipp {
                 (paremAlluv != null ? paremAlluv.sulgesitus() : "()") + ")";
     }
 
-    // TODO: Ülesanne 1
     // Koostada rekursiivne meetod, mis genereerib juhusliku AVL-puu etteantud kõrgusega
     public static Tipp genereeri(int kõrgus) {
-        throw new UnsupportedOperationException();
+        if(kõrgus==0)return null;
+        if(kõrgus==1)return new Tipp(0);
+        Integer arv=new Random().nextInt(3);
+        switch (arv) {
+            case 0:
+                return new Tipp(0, genereeri(kõrgus - 1), genereeri(kõrgus - 1));
+            case 1:
+                return new Tipp(0, genereeri(kõrgus - 1), genereeri(kõrgus - 1));
+            default:
+                return new Tipp(0, genereeri(kõrgus - 2), genereeri(kõrgus - 2));
+        }
     }
 
     // TODO: Ülesanne 2

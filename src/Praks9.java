@@ -18,12 +18,21 @@ public class Praks9 {
         System.out.println("Puu eesjärjestus: ");
         tipp1.eesjärjestus();
 
-        System.out.println("Puu sulgesitus:");
+        System.out.println("algse Puu sulgesitus:");
         System.out.println(tipp1.sulgesitus());
 
         Tipp puu=Tipp.genereeri(4);
+        System.out.println("auto gen Puu sulgesitus:");
         System.out.println(puu.sulgesitus());
-        System.out.println(puu.tippudeArv());
-        System.out.println(tipp1.tippudeArv());
+
+        puu.täida(puu,1);
+        System.out.println("auto gen Puu uus sulgesitus:");
+        System.out.println(puu.sulgesitus());
+
+        System.out.println("auto gen tippude arv: "+puu.tippudeArv());
+        System.out.println("algse tippude arv: "+tipp1.tippudeArv());
+
+        System.out.println("auto gen korgus: "+puu.kõrgus());
+        System.out.println("algse korgus: "+tipp1.kõrgus());
     }
 }

@@ -88,17 +88,37 @@ public class Tipp {
         return kokku+1;
     }
 
-    // TODO: Ülesanne 2
     // Koostada meetod etteantud AVL-puu kõrguse leidmiseks
     public int kõrgus() {
-        throw new UnsupportedOperationException();
+        boolean lapsi=false;
+        int vasak=0;
+        int parem=0;
+        if(vasakAlluv!=null){
+            lapsi=true;
+            vasak=vasakAlluv.kõrgus();
+        }
+        if(paremAlluv!=null){
+            lapsi=true;
+            parem=paremAlluv.kõrgus();
+
+        }
+        if(lapsi)return Math.max(vasak,parem)+1;
+        else return  Math.max(vasak,parem);
     }
 
     // TODO: Ülesanne 3
     // Koostada meetod etteantud struktuuriga n-tipulise AVL-puu täitmiseks
     // täisarvudega 1, ..., n nii, et puu täidaks kahendotsimise puu tingimust
-    public void täida(Tipp puu) {
-        throw new UnsupportedOperationException();
+    public int täida(Tipp puu,int labitud) {
+        //if(puu==null)return labitud-1;
+        if(puu.vasakAlluv!=null){
+            labitud=täida(puu.vasakAlluv,labitud);
+        }
+        puu.väärtus=labitud;
+        if(puu.paremAlluv!=null){
+            labitud=täida(puu.paremAlluv,labitud+1);
+        }
+        return labitud+1;
     }
 
     // TODO: Ülesanne 4
